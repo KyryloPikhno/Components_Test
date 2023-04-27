@@ -1,6 +1,6 @@
 import { yupResolver } from "@hookform/resolvers/yup";
 import FormItem from "antd/es/form/FormItem";
-import { Controller } from "react-hook-form";
+import {Controller} from "react-hook-form";
 import { useForm } from "react-hook-form";
 import { Input } from "antd";
 import * as yup from "yup";
@@ -8,38 +8,38 @@ import * as yup from "yup";
 const videoUrl = /^(?:https?:\/\/)?(?:m\.|www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})(?:\S+)?$/;
 
 const InputAnt = () => {
-     const getSchema = () => {
+    const getSchema = () => {
         return yup.object().shape({
-            clickUrl: yup.string()
+            clickURL: yup.string()
                 .matches(videoUrl, 'tValidClickUrlVideo')
                 .required('tRequired'),
         });
     };
 
-    const { control, watch, handleSubmit, setError, formState: { isDirty, isValid, errors } } = useForm({
+    const {control, watch, handleSubmit, setError, formState: {isDirty, isValid, errors}} = useForm({
         resolver: yupResolver(getSchema()),
-        mode: "onChange"
+        mode: "all"
     });
 
     return (
         <div>
             <Controller
-                name={ 'userName' }
-                control={ control }
-                render={ ({ field }) => (
+                name={'clickURL'}
+                control={control}
+                render={({field}) => (
                     <FormItem
-                        label={ 'userName' }
-                        validateStatus={ errors.userName  }
-                        help={ (errors?.userName?.message) ?? null }
+                        label={'clickURL'}
+                        validateStatus={errors.clickURL}
+                        help={(errors?.clickURL?.message) ?? null}
                         required
                     >
                         <Input
                             autoFocus
-                            placeholder={ 'userName' }
-                            { ...field }
+                            placeholder={'clickURL'}
+                            {...field}
                         />
                     </FormItem>
-                ) }
+                )}
             />
         </div>
     );
