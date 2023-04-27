@@ -1,20 +1,18 @@
 import { yupResolver } from "@hookform/resolvers/yup";
+import FormItem from "antd/es/form/FormItem";
 import { Controller } from "react-hook-form";
 import { useForm } from "react-hook-form";
 import { Input } from "antd";
 import * as yup from "yup";
-import FormItem from "antd/es/form/FormItem";
 
+const videoUrl = /^(?:https?:\/\/)?(?:m\.|www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})(?:\S+)?$/;
 
 const InputAnt = () => {
-
      const getSchema = () => {
         return yup.object().shape({
-            userName: yup.string()
-                .min(4, 'min_4')
-                .max(30, 'max_30')
-                .matches(/^[a-zA-Z0-9а-яА-ЯіІїЇєЄёЁ_-]+$/, 'tInvalidUserName')
-                .required('tFirstnameRequired'),
+            clickUrl: yup.string()
+                .matches(videoUrl, 'tValidClickUrlVideo')
+                .required('tRequired'),
         });
     };
 
