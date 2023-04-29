@@ -1,21 +1,32 @@
-import React, {useMemo, useState} from 'react';
+import { useState, useEffect } from 'react';
+import {useMemoOne} from "use-memo-one";
 
-function MyComponent(props) {
+
+function MyComponent() {
     const [number, setNumber] = useState(0);
 
-    const factorial = useMemo(() => {
+    const factorial = useMemoOne(() => {
         let result = 1;
         for (let i = 2; i <= number; i++) {
             result *= i;
         }
+
         return result;
     }, [number]);
 
-    console.log(factorial);
+    useEffect(() => {
+        console.log('Component mounted');
+
+        return () => {
+            console.log('Component unmounted');
+        };
+    }, []);
 
     const handleNumberChange = (e) => {
         setNumber(e.target.value);
     };
+
+    console.log(factorial);
 
     return (
         <div>
@@ -27,5 +38,6 @@ function MyComponent(props) {
         </div>
     );
 }
+
 
 export {MyComponent};
