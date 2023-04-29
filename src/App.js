@@ -1,6 +1,5 @@
 import {List} from "./components/useCallBack/List";
 
-
 function App() {
     const items = [
         {id: 1, name: "Item 1"},

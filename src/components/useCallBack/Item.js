@@ -1,9 +1,10 @@
-import {useCallback, memo} from "react";
+import {useCallbackOne} from "use-memo-one";
+import {memo} from "react";
 
 const MemoItem = memo(function Item({item, onDelete}) {
     console.log(`Rendering Item with id=${item.id}`);
 
-    const handleDelete = useCallback(() => {
+    const handleDelete = useCallbackOne(() => {
         onDelete(item.id);
     }, [onDelete, item.id]);
 
