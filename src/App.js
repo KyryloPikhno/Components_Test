@@ -1,4 +1,4 @@
-import {InputAnt} from "./components/InputAnt/InputAnt";
+import {MyComponent} from "./useMemo";
 
 
 function App() {
@@ -6,9 +6,10 @@ function App() {
 
     return (
         <div>
-            <InputAnt/>
+            <MyComponent/>
         </div>
     );
 }
+
 
 export default App;

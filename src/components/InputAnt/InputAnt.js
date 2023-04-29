@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import { Input } from "antd";
 import * as yup from "yup";
 
-const videoUrl = /^(?:https?:\/\/)?(?:m\.|www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})(?:\S+)?$/;
+const videoUrl = /^(?:https?:\/\/)?(?:m\.|www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})(?:\S+)?(?<!\s)$/;
 
 const InputAnt = () => {
     const getSchema = () => {
