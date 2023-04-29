@@ -25,18 +25,16 @@ function MyComponent() {
         setNumber(e.target.value);
     };
 
-    console.log(factorial);
-
     return (
         <div>
+            {console.log('Rendered')}
             <label>
                 Enter a number:
-                <input type="number" value={number} onChange={handleNumberChange} />
+                <input type="number" value={number} onChange={handleNumberChange}/>
             </label>
             <p>{`Factorial of ${number} is ${factorial}`}</p>
         </div>
     );
 }
-
 
 export default memo( MyComponent);
