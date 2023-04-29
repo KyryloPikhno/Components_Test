@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import {useMemoOne} from "use-memo-one";
+
 
 function MyComponent() {
     const [number, setNumber] = useState(0);
-    const [visible, setVisible] = useState(true);
 
     const factorial = useMemoOne(() => {
         let result = 1;
@@ -25,26 +25,18 @@ function MyComponent() {
         setNumber(e.target.value);
     };
 
-    const toggleVisibility = () => {
-        setVisible(!visible);
-    };
-
     console.log(factorial);
 
     return (
         <div>
-            <button onClick={toggleVisibility}>{visible ? 'Hide' : 'Show'}</button>
-            {visible && (
-                <div>
-                    <label>
-                        Enter a number:
-                        <input type="number" value={number} onChange={handleNumberChange} />
-                    </label>
-                    <p>{`Factorial of ${number} is ${factorial}`}</p>
-                </div>
-            )}
+            <label>
+                Enter a number:
+                <input type="number" value={number} onChange={handleNumberChange} />
+            </label>
+            <p>{`Factorial of ${number} is ${factorial}`}</p>
         </div>
     );
 }
+
 
 export {MyComponent};
