@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import {useState, useEffect, memo} from 'react';
 import {useMemoOne} from "use-memo-one";
 
 
@@ -39,4 +39,4 @@ function MyComponent() {
 }
 
 
-export {MyComponent};
+export default memo( MyComponent);

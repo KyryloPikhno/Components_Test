@@ -1,4 +1,4 @@
-import {MyComponent} from "./useMemo";
+import MyComponent from './useMemo';
 import React from "react";
 
 
@@ -8,7 +8,6 @@ function App() {
     const handleClick = () => {
         setShowComponent((prev) => !prev);
     };
-
 
     return (
         <div>
