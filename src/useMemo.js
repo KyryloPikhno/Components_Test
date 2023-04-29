@@ -10,7 +10,6 @@ function MyComponent() {
         for (let i = 2; i <= number; i++) {
             result *= i;
         }
-
         return result;
     }, [number]);
 
