@@ -1,8 +1,8 @@
-import {KeyItem} from "./components/useHotkeys/Item";
+import {ItemRef} from "./components/useRef/ItemRef";
 
 function App() {
 
-    return <KeyItem/>;
+    return <ItemRef/>;
 }
 
 export default App;
