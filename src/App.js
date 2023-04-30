@@ -1,8 +1,6 @@
 import {KeyItem} from "./components/useHotkeys/Item";
 
-
 function App() {
-
 
     return <KeyItem/>;
 }
