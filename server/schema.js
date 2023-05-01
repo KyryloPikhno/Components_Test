@@ -7,6 +7,7 @@ const schema = buildSchema(`
         age: Int
         posts: [Post]
     }
+    
     type Post {
         id: ID
         title: String
@@ -19,6 +20,7 @@ const schema = buildSchema(`
         age: Int!
         posts: [PostInput]
     }
+    
     input PostInput {
         id: ID
         title: String!
@@ -29,6 +31,7 @@ const schema = buildSchema(`
         getAllUsers: [User]
         getUser(id: ID): User
     }
+    
     type Mutation {
         createUser(input: UserInput): User
     }
