@@ -2,6 +2,7 @@ import {GET_ALL_USERS, GET_ONE_USER} from "./query/user";
 import {useMutation, useQuery} from "@apollo/client";
 import {CREATE_USER} from "./mutations/user";
 import {useEffect, useState} from "react";
+import './style.scss'
 
 
 function App() {
@@ -51,11 +52,11 @@ function App() {
   }
 
   return (
-      <div>
-        <form>
-          <input value={username} onChange={e => setUsername(e.target.value)} type="text" placeholder={'username'}/>
-          <input value={age} onChange={e => setAge(Number(e.target.value))} type="number" placeholder={'age'}/>
-          <div className="btns">
+      <div className="app">
+        <form className="app_form">
+          <input className="app_input" value={username} onChange={e => setUsername(e.target.value)} type="text" placeholder={'username'}/>
+          <input className='app_input' value={age} onChange={e => setAge(Number(e.target.value))} type="number" placeholder={'age'}/>
+          <div className="app_btns">
             <button onClick={(e) => addUser(e)}>Создать</button>
             <button onClick={e => getAll(e)}>Получить</button>
           </div>
