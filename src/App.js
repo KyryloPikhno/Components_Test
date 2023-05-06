@@ -1,8 +1,9 @@
-import {ItemRef} from "./components/useRef/ItemRef";
 
 function App() {
 
-    return <ItemRef/>;
+    return(
+        <div>app</div>
+    );
 }
 
 export default App;
