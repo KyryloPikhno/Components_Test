@@ -1,9 +1,9 @@
+import {Page} from "./components/page";
 
 function App() {
 
-    return(
-        <div>app</div>
-    );
+    return <Page/>;
 }
+
 
 export default App;

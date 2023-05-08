@@ -15,10 +15,7 @@ export const RemoveContainer = styled.span`
 	align-self: center;
 	margin-left: 10px;
 	margin-bottom: 10px;
-	
-	& .anticon.anticon-minus-circle {
-	color: ${({ theme }) => theme.data.grey2};
-	}
+  
 `;
 
 export const Label = styled.label`
