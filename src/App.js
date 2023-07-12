@@ -1,8 +1,9 @@
-import {ItemRef} from "./components/useRef/ItemRef";
+import {Page} from "./components/page";
 
 function App() {
 
-    return <ItemRef/>;
+    return <Page/>;
 }
+
 
 export default App;
